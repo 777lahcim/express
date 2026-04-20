@@ -1,5 +1,6 @@
 'use strict'
 
+const os = require('os');
 var express = require('../../');
 
 var app = module.exports = express()
@@ -31,4 +32,8 @@ app.get('/advanced', (req, res) => {
     res.status(200).json(healthCheck);
 });
 
-app.listen(3000);
+/* istanbul ignore next */
+if (!module.parent) {
+  app.listen(3000);
+  console.log('Express started on port 3000');
+}
