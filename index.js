@@ -11,8 +11,6 @@
 var app = module.exports = require('./lib/express');
 const os = require('os');
 
-var app = module.exports = express()
-
 app.get('/', function(req, res){
   res.send('Hello World');
 });
